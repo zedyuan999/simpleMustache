@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script src="./index.js"></script>
+  <script>
+    const template = `
+    <div>在广东省{{city}}市{{country}}区
+    {{#student}}
+      <p>{{name}}喜欢：</p>
+      <ul>
+        {{#hobby}}
+          <li>{{.}}</li>
+        {{/hobby}}
+      </ul>
+    {{/student}}</div>
+    `
+    const data = {
+      city: '佛山',
+      country: '顺德',
+      student: [
+        {
+          name: '煞笔文浩', hobby: ['找富婆', '炼铜']
+        }, {
+          name: '蔡蔡', hobby: ['钓鱼', '加班']
+        }
+      ]
+    }
+    const mastrche = Mastrche.render(template, data)
+    document.write(mastrche)
+  </script>
+</body>
+
+</html>
